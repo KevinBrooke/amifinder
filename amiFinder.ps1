@@ -2,7 +2,7 @@
 $filter = "amzn-ami-hvm*"
 
 # Obtain a list of regions
-$regions = aws ec2 describe-regions --output text | %{ $_.split("`t")[2]; }
+$regions = aws ec2 describe-regions --output text | ForEach-Object{ $_.split("`t")[2]; }
 
 # Start the YAML output
 write-host "Mappings:"
