@@ -13,6 +13,6 @@ write-host "  AMIRegionMap:"
 foreach ($region in $regions)
 {
     $ami = aws ec2 describe-images --region $region --filters "Name=name,Values=$nameFilter" "Name=root-device-type,Values=$rootDeviceFilter" --query 'sort_by(Images,&CreationDate)[-1].ImageId' --output text
-    write-host "    "$region":"
+    write-host "   "$region":"
     write-host "      AMI: ""$ami"""
 }
