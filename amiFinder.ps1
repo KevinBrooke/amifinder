@@ -1,3 +1,4 @@
+# Obtain parameters
 param(
     [string]$os,
     [string]$hdd
